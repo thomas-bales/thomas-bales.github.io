@@ -1,0 +1,844 @@
+/* CSS Variables */
+:root {
+    /* Colors */
+    --primary: #5bd1d7;
+    --secondary: #9de3e7;
+    --dark: rgb(27, 27, 27);
+    --gray: #f5f6f7;
+    --light: #fff;
+    --shadow: rgb(0, 0, 0);
+    --item-overlay-color: #0000007e;
+
+    /* Sizes */
+    --thinGap: 10px;
+
+    /* Animations */
+    --bgColor: white;
+    --fontColor: rgb(27, 27, 27);
+    --numOfChars: 14;
+    --typeSpeed: 3s;
+}
+
+* {
+    margin: 0px;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.top-section{
+    background-image: url("Assets/sunset-background.jpg");
+    height: 100vh;
+}
+
+.btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    background: var(--primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--dark);
+    opacity: 0.6;
+    
+    transition: all 0.25s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--dark);
+    color: var(--light);
+    transform: scale(1.05);
+}
+
+/* **************************************************************************** */
+
+/* Navigation */
+.nav-wrapper {
+    border-bottom: var(--primary) 3px solid;
+    padding-bottom: 3px;
+    opacity: 0.6;
+}
+.main-nav {
+    display: grid;
+    grid-template-columns: minmax(170px, 1fr) 820px;
+    grid-template-rows: 50px;
+    grid-gap: var(--thinGap);
+    overflow: hidden;
+    
+    font-weight: 500;
+}
+
+.name {
+    align-self: center;
+
+    background: var(--primary);
+    padding: 100% 0 100% 20px;
+}
+
+.main-nav ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: var(--thinGap);
+    align-self: center;
+    padding: 0;
+
+    list-style: none;
+}
+
+.nav-link {
+    display: flex;
+    width: 100%;
+    padding: 100% 0 100% 0;
+    justify-content: center;
+
+    background: var(--primary);
+}
+
+.nav-link:hover {
+    background-color: var(--dark);
+    color: var(--light);
+    transform: scale(1.05);
+}
+
+.main-nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--dark);
+
+    transition: all 0.25s ease-in-out;
+}
+
+
+
+
+/* ******************************************************************************* */
+
+/* Heading */
+.heading {
+    height: 100%;
+}
+
+.heading h1 {
+    font-size: 4.5rem;
+    font-family: monospace;
+    margin-top: 13%;
+    margin-left: 12%;
+    border: solid var(--bgColor) 20px;
+    border-radius: 25px;
+
+    width: max-content;
+    position: relative;
+    color: var(--fontColor);
+    background-color: var(--bgColor);
+}
+
+.heading p {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-left: 20%;
+    margin-right: 200px;
+
+    color: white;
+    text-shadow: 0 0 10px var(--shadow);
+
+    transform: translateY(3rem);
+    opacity: 0;
+    animation: fadeAnim 2s ease calc(var(--typeSpeed) + 1.5s) forwards;
+}
+
+@keyframes typeAnim {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blinkAnim {
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes fadeAnim {
+    to {
+        opacity: 1;
+        transformY: translateY(0);
+    }
+}
+
+.heading h1::before,
+.heading h1::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.heading h1::before {
+    background: var(--bgColor);
+    animation: typeAnim var(--typeSpeed) steps(var(--numOfChars)) 1s forwards;
+}
+
+.heading h1::after {
+    background: var(--fontColor);
+    width: 0.075em;
+    /* top: 0.2em;
+    bottom: 0.2em; */
+
+    animation: typeAnim var(--typeSpeed) steps(var(--numOfChars)) 1s forwards,
+               blinkAnim 750ms steps(var(--numOfChars)) infinite;
+}
+
+
+
+
+/* ******************************************************************************* */
+
+/* Portfolio */
+.portfolio {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: minmax(50px, 1fr) 1100px minmax(50px, 1fr);
+    margin: 70px 0;
+
+    border-top: var(--primary) 3px solid;
+    border-bottom: var(--primary) 3px solid;
+    padding: 50px 0;
+}
+
+.portfolio h1 {
+    margin-bottom: 70px;
+    grid-column: 2;
+    font-size: 2rem;
+    text-align: center;
+    border-bottom: var(--primary) 3px solid;
+}
+
+.portfolio-wrapper {
+    grid-column: 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    grid-gap: 25px;
+}
+
+.item {
+    border: solid 2px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 350px;
+    grid-template-rows: 250px;
+}
+
+.item p {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px var(--shadow);
+    text-align: center;
+}
+
+.item-overlay {
+    display: grid;
+    background: var(--item-overlay-color);
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    justify-items: center;
+    align-content: center;
+
+    transition: 0.3s ease-in-out;
+    transform: translateY(100%);
+}
+
+.item:hover .item-overlay {
+    transform: translateY(0);
+}
+
+.item-overlay button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+
+    transition: 0.1s ease-in-out;
+}
+
+.item-overlay button:hover {
+    transform: scale(1.15);
+    border: 2px solid rgb(216, 206, 206);
+    color: rgb(216, 206, 206);
+}
+
+.item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
+
+
+
+/* ******************************************************************************* */
+
+/* About */
+.about {
+    border-top: var(--primary) 3px solid;
+    border-bottom: var(--primary) 3px solid;
+    padding: 3px 0;
+
+    margin-bottom: 50px;
+
+    display: grid;
+    align-content: center;
+    justify-items: center;
+}
+
+.about-wrapper {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    width: 100%;
+    grid-template-columns: 1fr 1000px 1fr;
+
+    background: var(--secondary);
+    padding: 200px 0;
+}
+
+.about-wrapper h1 {
+    grid-column: 2;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+
+    border-bottom:  rgb(129, 129, 129) 3px solid;
+}
+
+.about-wrapper p {
+    grid-column: 2;
+    text-align: center;
+    line-height: 1.65;
+    font-size: 1.5rem;
+}
+
+/* ******************************************************************************* */
+
+/* Contact */
+.contact{
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    width: 100%;
+    border-top: var(--primary) 3px solid;
+    border-bottom: var(--primary) 3px solid;
+    
+    padding-top: 80px;
+    padding-bottom: 100px;
+
+}
+.contact-wrapper{
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    width: 100%;
+    grid-template-columns: 1fr 1000px 1fr;
+
+    
+    align-content: center;
+    justify-items: center;
+}
+
+.contact-wrapper h1{
+    grid-column: 2;
+
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    
+
+    border-bottom: var(--primary) 3px solid;
+}
+
+.contact-wrapper p{
+    grid-column: 2;
+
+    text-align: center;
+    line-height: 1.65;
+    font-size: 1.5rem;
+}
+
+.contact-wrapper i{
+
+    padding-right: 1rem;
+}
+
+.contact-wrapper a
+{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--dark);
+    font-size: 1.05rem;
+
+    transition: all 0.25s ease-in-out;
+}
+
+.contact-wrapper a:hover {
+    font-size: 1.2rem;
+}
+
+
+/* Style for php form, doesn't work w/ github */
+/* .contact form {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 800px;
+    height: 100%;
+    justify-content: center;
+}
+
+.contact ul {
+    display: grid;
+    background:var(--gray);
+    padding: 50px 20px;
+    grid-template-rows: repeat(4, 1fr);
+    
+
+    list-style: none;
+}
+
+.contact li {
+    display: grid;
+    grid-gap: 15px;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content;
+}
+
+.contact label {
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.contact input {
+    height: 5rem;
+}
+
+.contact input,
+.contact textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 20px;
+
+    border: 1px solid #999;
+}
+
+.contact textarea {
+    vertical-align: top;
+    height: 10rem;
+    resize: none;
+} */
+
+/* ******************************************************************************* */
+
+/* Footer */
+.footer {
+    border-top: var(--primary) 3px solid;
+    padding-top: 3px;
+    margin-top: 50px;
+}
+
+.footer-outer-wrapper {
+    background: var(--secondary);
+}
+
+.footer-wrapper {
+    background: var(--primary);
+    /* opacity: 0.6; */
+
+    margin: 0 15%;
+    padding-top: 15px;
+
+    display: grid;
+    grid-template-rows: repeat(2, 1fr) 0.5fr 1fr;
+    align-content: center;
+    justify-items: center;
+}
+
+.footer-links {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 60px;
+
+    display: grid;
+    align-content: center;
+    justify-items: center;
+}
+
+.footer-link {
+    display: grid;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+
+    align-content: center;
+    justify-items: center;
+    transition: all 0.25s ease-in-out;
+}
+
+.footer-link:hover {
+    background: #9de3e7;
+}
+
+.linkedin {
+    background: #0077b5;
+    
+}
+
+.github {
+    background: #000000;
+
+    /* color: black;
+    background-color: white;
+    font-size: 41px;
+    padding: 0;
+    width: 39px;
+    height: 39px;
+    line-height: 0.96; */
+}
+
+.itch {
+    background: #f95b5a;
+}
+
+.youtube {
+    background: rgb(255 0 0);
+}
+
+.gmail {
+    background: #ea4335;
+}
+
+.footer-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px;
+    grid-gap: var(--thinGap);
+    overflow: hidden;
+    margin-top: 8px;
+    
+    font-weight: 500;
+}
+
+.footer-nav ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 100px;
+    align-self: center;
+    padding: 0;
+
+    list-style: none;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--dark);
+    font-size: 1.05rem;
+
+    transition: all 0.25s ease-in-out;
+}
+
+.footer-link-B {
+    display: flex;
+    width: 100%;
+    padding: 100% 0 100% 0;
+    justify-content: center;
+
+    background: var(--primary);
+}
+
+.footer-link-B:hover {
+    color: var(--light);
+}
+
+.footer-copyright {
+    opacity: 0.6;
+}
+
+.footer-return {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    width: 100%
+}
+.footer-return a {
+    background-color: #9de3e7;
+    height: 100%;
+    width: 10%;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
+
+    color: rgb(129, 129, 129);
+    font-size: 2rem;
+    transition: all 0.25s ease-in-out;
+
+    clip-path: polygon(50% 20%, 0% 100%, 100% 100%);
+}
+
+.footer-return i {
+    position: relative;
+    top: 15px;
+}
+    
+
+.footer-return a:hover {
+    color: rgb(22, 22, 22);
+    
+    border: 0;
+    font-size: 2rem;
+}
+
+
+
+
+/* ******************************************************************************* */
+
+/* Modal Window */
+.modal-window {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    display: none;
+}
+
+.open {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.inner-modal-window {
+    background: rgb(255, 255, 255);
+    width: 1400px;
+    height: 720px;
+    padding: 0px 50px;
+    position: relative;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    overflow: hidden;
+}
+
+.left-btn,
+.right-btn {
+    background: none;
+    color: rgb(129, 129, 129);
+    
+    border: 0;
+    font-size: 2rem;
+    transition: all 0.25s ease-in-out;
+}
+
+.left-btn:hover,
+.right-btn:hover{
+    background: none;
+    color: rgb(22, 22, 22);
+    
+    border: 0;
+    font-size: 2rem;
+    transform: scale(1.4);
+}
+
+.images {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    justify-items: center;
+    align-items: center;
+}
+
+.circles {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 5px;
+    grid-column: span 3;
+    justify-items: center;
+}
+
+.circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+
+    background-color: rgb(129, 129, 129);
+    opacity: 0.8;
+    transition: all 0.25s ease-in-out;
+
+    position: relative;
+    top: -25px;
+}
+
+.circle-active {
+    background-color: var(--primary);
+    transform: scale(1.5);
+}
+
+.close-btn {
+    position: absolute;
+    top:0;
+    bottom:0.2;
+    right: 0;
+
+    background: none;
+    color: black;
+    border: 0;
+    transition: all 0.1s ease-in-out;
+}
+
+.close-btn:hover {
+    background: rgb(248, 74, 74);
+    color: var(--light);
+}
+
+.info {
+    display: none;
+}
+
+.info-active {
+    padding: 30px 0;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    grid-gap: 70px;
+}
+
+.links {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+}
+.links a{
+    text-decoration: none;
+    padding: 10px;
+}
+
+.links-one-column a{
+    text-decoration: none;
+    padding: 10px;
+}
+
+.info h2 {
+    font-size: 3rem;
+    font-family: monospace;
+    text-align: center;
+    color: var(--fontColor);
+}
+
+.info p {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    color: var(--fontColor);
+}
+
+
+
+
+/* Modal Window --- Images */
+.screenshots {
+    display: none;
+}
+
+.screenshots-active {
+    overflow: hidden;
+    position: relative;
+    border: 2px black solid;
+
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+
+.screenshots-active img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image {
+    display: none;
+}
+
+.image-active {
+    display: grid;
+}
+
+.image-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: grid;
+    transform: scale(50%) translateX(150%);
+}
+
+.image-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    display: grid;
+    transform: scale(50%) translateX(-150%);
+}
+
+.image-anim {
+    transform: scale(100%) translateX(0);
+}
+
+.image-transition {
+    transition: all 0.25s ease-in-out;
+}
