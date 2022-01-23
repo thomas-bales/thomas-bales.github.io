@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Thomas Bales</title>
+        <script src="https://kit.fontawesome.com/b577001cad.js" crossorigin="anonymous"></script>
+        <style>
+/* General Style + Header */
+            @font-face { font-family: 'Fira Sans'; src: url('Fira_Sans/FiraSans-Regular.ttf'); }
+            @font-face { font-family: 'Merriweather'; src: url('Merriweather/Merriweather-Regular.ttf'); }
+            body 
+            {
+                font-family: 'Fira Sans', sans-serif;
+                color: black;
+                padding: 0px;
+                margin: 0px;
+                background-color: rgb(90, 90, 90);
+                width: 100%;
+                height: 100%;
+            }
+            p, .body-text
+            {
+                font-family: 'Merriweather', sans-serif;
+                font-size: 20px;
+            }
+            #header
+            {
+                position: fixed; 
+                
+                padding: 0px;
+                margin: 0px;
+                border-top: 5px solid rgb(248, 77, 77);
+                border-bottom: 5px solid rgb(248, 77, 77);
+                background-color: rgb(172, 172, 172);
+                box-shadow: 3px 3px 2px rgb(99, 99, 99);
+                z-index: 20;
+
+                width: 100.5%;
+                left: -5px;
+                font-weight: bold;
+            }
+            #header-text
+            {
+                width: 72%;
+                margin: auto;
+            }
+            #header img
+            {
+                margin-top: 10px;
+                float: left;
+                width: 50px;
+                border-radius: 1rem;
+            }
+            #my-name
+            {
+                margin-top: 10px;
+                margin-bottom: 5px;
+                margin-right: 0px;
+                margin-left: 0px;
+                padding: 5px;
+                display: block;
+                float: left;
+                font-size: 30px;
+            }
+            #page-navigation
+            {
+                list-style-type: none;
+                margin: 0;
+                padding: 0px;
+                overflow: hidden;
+                float: right;
+            }
+            #page-navigation li
+            {
+                float: right;
+            }
+            #page-navigation li a
+            {
+                text-transform: uppercase;
+                margin: 5px;
+                padding: 15px;
+                display: block;
+                width: 100px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 20px;
+                color: black;
+            }
+            #page-navigation li a:hover
+            {
+                background-color: rgb(75, 75, 75);
+                color: white;
+            }
+
+
+/* Classes */
+            #container
+            {
+                background-color: rgb(255, 255, 255);
+                width: 80%;
+                height: 100%;
+                margin: auto;
+                padding-top: 50px;
+                z-index: 1;
+                position: relative; 
+                top: 70px;
+                box-shadow: 0 0 10px rgb(56, 56, 56);
+                padding: 30px;
+                overflow: hidden;
+                
+            }
+            .section-header
+            {
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 50px;
+                border-bottom: 5px solid rgb(248, 77, 77);
+                width: 20%;
+                margin: auto;
+            }
+            .end-block
+            {
+                clear: both;
+            }
+            .link-transition
+            {
+                -webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, opacity 0.25s ease-in-out;
+                -moz-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, opacity 0.25s ease-in-out;
+                -o-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, opacity 0.25s ease-in-out;
+                transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, opacity 0.25s ease-in-out;
+            }
+            
+
+
+/* Introduction */
+            #introduction
+            {
+               font-size: 20px; 
+               padding-top: 200px;
+               padding-left:  30px;
+               padding-right: 30px;
+               padding-bottom: 30px;
+               border-bottom: 5px double rgb(214, 214, 214);
+            }
+            #introduction img
+            {
+                float: left;
+                width: 400px;
+                margin-right: 30px;
+                border-radius: 1.0rem;
+            }
+            #introduction h1
+            {
+                font-size: 50px;
+            }
+            #about-me-blurb
+            {
+                padding-right: 200px;
+            }
+            #introduction ul
+            {
+                position: relative;
+                left: 0px;
+                margin-right: 80px;
+                list-style-type: none;
+                
+            }
+            #introduction ul li, #portfolio ul li, #skills ul li
+            {
+                text-align: center;
+                margin-bottom: 150px;
+                display: inline-block;
+                margin-right: 30px;
+                margin-top: 30px;
+            }
+            #introduction ul li a, #portfolio ul li a
+            {
+                text-transform: uppercase;
+                text-decoration: none;
+                border:  2px solid #4D649A;
+                border-radius: 0.5rem;
+                padding: 5px;
+                color: #4D649A;
+                background-color:#D2DBEE;
+                opacity: 0.9;
+            }
+            #introduction ul li a:hover, #portfolio ul li a:hover
+            {
+                background-color:#6d81aa;
+                color: rgb(255, 255, 255);
+                opacity: 1;
+            }
+
+
+
+
+
+/* Portfolio */ 
+            #portfolio
+            {
+                border-bottom: 5px double rgb(214, 214, 214);
+            }
+            #portfolio h1
+            {
+                margin-top: 500px;
+                margin-bottom: 100px;
+            }
+            #portfolio h2
+            {
+                text-transform: uppercase;
+            }
+            #portfolio h2
+            {
+                position: relative;
+                right: 15px;
+            }
+            #portfolio p
+            {
+                text-align: left;
+                position: relative;
+                left: 50px;
+                margin-right: 100px;
+            }
+            #portfolio img
+            {
+                float: left;
+                width: 400px
+            }
+            #portfolio .project
+            {
+                border: 5px  double rgb(56, 56, 56);;
+                border-radius: 1.0rem;
+                box-shadow: 0 0 10px rgb(56, 56, 56);
+
+                width: 90%;
+                height: 100%;
+                clear: both;
+                margin: auto;
+                margin-bottom: 150px;
+                overflow: hidden;
+                
+            }
+            #portfolio .content
+            {
+                text-align: center;
+            }
+            #portfolio ul
+            {
+                text-align: center;
+            }
+            #portfolio ul li
+            {   
+                margin-bottom: 0px;
+            }
+
+
+
+
+
+/* Skills */
+            #skills
+            {
+                margin-top: 300px;
+                margin-left: -30px;
+                margin-right: -30px;
+                padding-top: 50px;
+                box-shadow: 0 0 10px rgb(56, 56, 56);
+                
+                background-color: rgb(214, 214, 214);
+                
+            }
+            #skills ul
+            {
+                margin-top: 50px;
+                text-align: center;
+            }
+            #skills ul li
+            {
+                margin-left: 50px;
+                margin-right: 50px;
+                margin-bottom: 50px;
+                color: #4D649A;
+                padding: 10px 20px 10px 20px;
+                background-color: #D2DBEE;
+                border: 2px solid #4D649A;
+                border-radius: 1.5rem;
+            }
+
+
+
+
+/* Contact */
+            #contact
+            {
+                margin-top: 300px;
+                border-bottom: 5px double rgb(214, 214, 214);
+            }
+            #contact h1
+            {
+                width: 30%;
+            }
+            #contact p
+            {
+                margin-top: 50px;
+                margin-bottom: 150px;
+                text-align: center;
+                width: 100%;
+            }
+            #contact a
+            {
+                color: rgb(133, 133, 133);
+                text-decoration: none;
+            }
+        </style>
+    </head>
+
+    <body>
+<!-- Header -->
+        <div id = header>  
+            
+            <div id = header-text> <img src = Photos/Logo.png alt = Logo Displays Here> <span id = my-name>Thomas Bales</span>
+                <ul id = page-navigation>  
+                    <li><a class = link-transition href = #contact> Contact</a></li>
+                    <li><a class = link-transition href = #skills> Skills</a></li>
+                    <li><a class = link-transition href = #portfolio> Portfolio</a></li>
+                    <li><a class = link-transition href = #introduction> About </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id = container>
+<!-- Introduction -->
+            <div id = introduction>
+                
+                <img src = "Photos/photo-of-me.jpeg" alt = "Photo of Me">
+                <h1> Hi, I'm Thomas! </h1>
+                <p id = about-me-blurb> I'm a game developer and 2nd-year Computer Science Major based in San Marcos, Texas.
+                    I enjoy all things code-related and spend much of my free-time learning new coding skills. When I'm not
+                    coding, you can find me writing music, which I post on my Youtube, or out playing board games or disc
+                    golfing. Currently, I'm focused on devoping my first mobile game, which I plan to release later this
+                    year.
+                </p>
+                <ul>
+                    <li><a class = link-transition href = https://github.com/thomas-bales target = _blank> GitHub </a></li>
+                    <li><a class = link-transition href = https://thomas-bales.itch.io target = _blank> Itch.io </a></li>
+                    <li><a class = link-transition href = https://www.youtube.com/channel/UC5ryHzPgr3F2T567VOXKp_A target = _blank> Youtube </a></li>
+                </ul>
+                <p class = end-block ></p>
+                
+            </div>
+
+<!-- Portfolio -->
+            <div id = portfolio>
+                <h1 class = section-header> Portfolio </h1>
+
+                <div class = 'project'>
+                    <img src = Photos/AudioRecorderScrnshot.PNG alt = "Project Image displays Here">
+                    <div class = 'content'>
+                        <h2> Audio Recorder </h2>
+                        <p>
+                            This C++ application uses the Microsoft Core Audio APIs to record output audio from a selected audio device to a WAV file. This project taught me how 
+                            audio is represented digitally, how WAV files are structured, and how binary files are represented.
+                        </p>
+                        <ul>
+                            <li><a href = https://github.com/thomas-bales/Audio-Recorder target = _blank class = link-transition> View Source Code on GitHub </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class = 'project'>
+                    <img src = Photos/diver-scrnshot.png alt = "Project Image displays Here">
+                    <div class = 'content'>
+                        <h2> Deep Sea Diver </h2>
+                        <p>
+                            This game was developed in Unity for the 2021 Ludum Dare Game Jam. This was my first Game Jam and I collaborated with my brothers to build this game.
+                            I was responsible for all sound design and programming, while they handled art and level design. This game is a short 2D platformer where you control
+                            a diver trying to get to the bottom of the ocean. You can swim and throw a trident, and you must collect air to stay alive. Your air supply depletes over
+                            time and enemies can knock extra air out of you.
+
+                        </p>
+                        <ul>
+                            <li><a href = https://github.com/thomas-bales/Deep-Sea-Diver target = _blank class = link-transition> View Source Code on GitHub </a></li>
+                            <li><a href = https://thomas-bales.itch.io/deep-sea-diver-browser target = _blank class = link-transition> View Project on Itch.io </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class = 'project'>
+                    <img src = Photos/snake-scrnshot.png alt = "Project Image displays Here">
+                    <div class = 'content'>
+                        <h2> Snake </h2>
+                        <p>
+                            This game runs a text-based version of the classic Snake Game in a Windows console terminal. The snake is controlled with the arrow keys. The snake
+                            grows longer and moves faster as you collect food. The game also saves the ten highest scores in a .txt file, which it reads and displays when first
+                            starting the application. See the source code for downloadable a version of the game.
+                        </p>
+                        <ul>
+                            <li><a href = https://github.com/thomas-bales/snake_console_app target = _blank class = link-transition> View Source Code on GitHub </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class = 'project'>
+                    <img src = Photos/rpg-scrnshot.png alt = "Project Image displays Here">
+                    <div class = 'content'>
+                        <h2> JRPG Battle Simulator </h2>
+                        <p>
+                            This project is the first game I've created. This game is completely text-based and runs in a Windows console terminal. This game repeatedly
+                            presents you with enemies that scale in difficulty as a you progress, and you are given a list of actions to defeat enemies. You can attack, use magic,
+                            or use items to fight. After every enemy, you are given the opportunity to buy upgrades or items for use in future fights. There is also a basic
+                            elemental system where you can deal extra damage to enemies by attacking them with an element-based attack that they are weak to. See the source code
+                            for a downloadable version of the game.
+                        </p>
+                        <ul>
+                            <li><a href = https://github.com/thomas-bales/RPG-Battle-System target = _blank class = link-transition> View Source Code on GitHub </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class = 'project'>
+                    <img src = Photos/golf-scrnshot.png alt = "Project Image displays Here">
+                    <div class = 'content'>
+                        <h2> Rocket Golf </h2>
+                        <p>
+                            This project is currently a work in progress and is being developed in  Unity. It is a top-down 2D shooter where you control a "golf ball" that moves
+                            by shooting a gun and using its recoil. Your goal is to progress through levels without dying. You must kill enemies, dodge hazards, destroy walls, and
+                            collect upgrades. This project will eventually be playable on Android and in browsers online. View the project on Itch.io to see the current progress
+                            of the game and read the devlogs.
+                        </p>
+                        <ul>
+                            <li><a href = https://github.com/thomas-bales/rocket-golf target = _blank class = link-transition> View Source Code on GitHub </a></li>
+                            <li><a href = https://thomas-bales.itch.io/rocket-golf target = _blank class = link-transition> View Project on Itch.io </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class = 'project'>
+                    <img src = Photos/Website2Scrnshot.jpg alt = "Project Image displays Here">
+                    <div class = 'content'>
+                        <h2> Portfolio 2.0 </h2>
+                        <p>
+                            This project is currently a work in progress. This website will eventually be my new portfolio website. This website uses the power of media queries, CSS grid,
+                            and Javascript to create an interective and fully responsive experience.
+                        </p>
+                        <ul>
+                            <li><a href = https://github.com/thomas-bales/thomas-bales.github.io/tree/main/Website_2.0 target = _blank class = link-transition> View Source Code on GitHub </a></li>
+                            <li><a href = 'Website_2.0/index.html' target = _blank class = link-transition> View Project </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class = end-block ></p>
+            </div>
+
+<!-- Skills -->
+            <div id = skills>
+                <h1 class = section-header> My Skills </h1>
+                <ul>
+                    <li> C++ </li>
+                    <li> C# </li> 
+                    <li> HTML/CSS </li>
+                    <li> Unity </li>
+                    <li> GitHub </li>
+                </ul>
+
+            </div>
+
+<!-- Contact -->
+            <div id = contact>
+                <h1 class = section-header> Contact Me </h1>
+                <p>
+                    <i class = "fas fa-envelope"></i><a href ="mailto:rbales.thomas@gmail.com" > rbales.thomas@gmail.com </a>
+                </p>
+                
+            </div>
+
+        </div>
+
+<!-- Footer -->
+        <div id = footer>
+
+        </div>
+        
+    </body>
+</html>
