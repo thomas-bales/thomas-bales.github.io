@@ -42,34 +42,41 @@
             <h1>Portfolio</h1>
             <div class="portfolio-wrapper">
                 <div class="item item0">
+                    <img src="Assets/Spacebot/title.JPG">
+                    <div class="item-overlay">
+                        <p>SpaceBot_X</p>
+                        <button>View</button>
+                    </div>
+                </div>
+                <div class="item item1">
                     <img src="Assets/Diver/diver-screenshot-1.png">
                     <div class="item-overlay">
                         <p>Deep Sea Diver</p>
                         <button>View</button>
                     </div>
                 </div>
-                <div class="item item1">
+                <div class="item item2">
                     <img src="Assets/Diesel/Title screen.png">
                     <div class="item-overlay">
                         <p>Dr. Diesel's Revenge</p>
                         <button>View</button>
                     </div>
                 </div>
-                <div class="item item2">
+                <div class="item item3">
                     <img src="Assets/Recorder/screenshot-1.JPG">
                     <div class="item-overlay">
                         <p>Windows Console Audio Recorder</p>
                         <button>View</button>
                     </div>
                 </div>
-                <div class="item item3">
+                <div class="item item4">
                     <img src="Assets/Snake/screenshot-2.png">
                     <div class="item-overlay">
                         <p>Windows Console Snake Game</p>
                         <button>View</button>
                     </div>
                 </div>
-                <div class="item item4">
+                <div class="item item5">
                     <img src="Assets/RPG/screenshot-5.png">
                     <div class="item-overlay">
                         <p>Windows Console Classic RPG</p>
@@ -184,8 +191,16 @@
                     <button class='left-btn'><i class="fas fa-chevron-circle-left"></i></button>
 
                     <!-- Actual Screenshots - active div depends on project -->
-                    <!-- Deep Sea Diver -->
+                    <!-- SpaceBot_X -->
                     <div class="screenshots screenshots0">
+                        <img class='image m5image1 image-active' src="Assets/Spacebot/screenshot-1.jpg">
+                        <img class='image m5image2 image-right' src="Assets/Spacebot/screenshot-2.jpg">
+                        <img class='image m5image3' src="Assets/Spacebot/screenshot-3.jpg">
+                        <img class='image m5image4' src="Assets/Spacebot/screenshot-4.jpg">
+                        <img class='image m5image5 image-left' src="Assets/Spacebot/screenshot-5.jpg">
+                    </div>
+                    <!-- Deep Sea Diver -->
+                    <div class="screenshots screenshots1">
                         <img class='image m5image1 image-active' src="Assets/Diver/diver-screenshot-1.png">
                         <img class='image m5image2 image-right' src="Assets/Diver/diver-screenshot-2.png">
                         <img class='image m5image3' src="Assets/Diver/diver-screenshot-3.png">
@@ -193,7 +208,7 @@
                         <img class='image m5image5 image-left' src="Assets/Diver/diver-screenshot-5.png">
                     </div>
                     <!-- Dr. Diesel's Revenge -->
-                    <div class="screenshots screenshots1">
+                    <div class="screenshots screenshots2">
                         <img class='image m5image1 image-active' src="Assets/Diesel/screenshot-1.png">
                         <img class='image m5image2 image-right' src="Assets/Diesel/screenshot-2.png">
                         <img class='image m5image3' src="Assets/Diesel/screenshot-3.png">
@@ -202,7 +217,7 @@
                     </div>
 
                     <!-- Windows Console Audio Recorder -->
-                    <div class="screenshots screenshots2">
+                    <div class="screenshots screenshots3">
                         <img class='image m5image1 image-active' src="Assets/Recorder/screenshot-1.JPG">
                         <img class='image m5image2 image-right' src="Assets/Recorder/screenshot-2.JPG">
                         <img class='image m5image3' src="Assets/Recorder/screenshot-3.JPG">
@@ -211,7 +226,7 @@
                     </div>
 
                     <!-- Windows Console Snake Game -->
-                    <div class="screenshots screenshots3">
+                    <div class="screenshots screenshots4">
                         <img class='image m5image1 image-active' src="Assets/Snake/screenshot-1.png">
                         <img class='image m5image2 image-right' src="Assets/Snake/screenshot-2.png">
                         <img class='image m5image3' src="Assets/Snake/screenshot-3.png">
@@ -220,7 +235,7 @@
                     </div>
 
                     <!-- Windows Console Classic RPG -->
-                    <div class="screenshots screenshots4 screenshots-active">
+                    <div class="screenshots screenshots5 screenshots-active">
                         <img class='image m5image1 image-active' src="Assets/RPG/screenshot-1.png">
                         <img class='image m5image2 image-right' src="Assets/RPG/screenshot-2.png">
                         <img class='image m5image3' src="Assets/RPG/screenshot-3.png">
@@ -243,9 +258,26 @@
                 </div>
 
                 <!-- Info - active div depends on project -->
-                <!-- Deep Sea Diver -->
+                <!-- SpaceBot_X -->
                 <div class="info info0 info-active">
-                    <h2>Deep Sea Diver</h2>
+                    <h2>SpaceBot_X</h2>
+                    <p class="blurb">
+                        I built this game with my sister for the SpaceScore Jam #17 in 2022, a game jam where all games
+                        must include a high score mechanic. My sister drew the artwork, and I 
+                        programmed the game and handled the sound design and
+                        music. The theme of the jam was "Protect", so we created a game with a duel
+                        mechanic: the very things you must protect are also your only weapons. In this game,
+                        you play as a robot protecting his power cells from alien invaders, who can only be killed
+                        by throwing the same power cells at them. 
+                    </p>
+                    <div class="links">
+                        <a class='btn' href='https://thomas-bales.itch.io/spacebot-ex' target=”_blank”>View Project on Itch.io</a>
+                        <a class='btn' href='https://github.com/thomas-bales/Spacebot_x' target=”_blank”>View Source on Github</a>
+                    </div>
+                </div>
+                <!-- Deep Sea Diver -->
+                <div class="info info1">
+                    <h2>Deep-Sea-Diver</h2>
                     <p class="blurb">
                         This game was developed in Unity for the 2021 Ludum Dare Game Jam. 
                         This was my first Game Jam and I collaborated with my brothers to 
@@ -262,7 +294,7 @@
                     </div>
                 </div>
                 <!--Dr. Diesel's Revenge-->
-                <div class="info info1">
+                <div class="info info2">
                     <h2>Dr. Diesel's Revenge</h2>
                     <p class="blurb">
                         This game was developed in Unity for the 2021 My First Game Jam (though this game jam was actually my third).
@@ -277,7 +309,7 @@
                     </div>
                 </div>
                 <!-- Windows Console Audio Recorder -->
-                <div class="info info2">
+                <div class="info info3">
                     <h2>Windows Console Audio Recorder</h2>
                     <p class="blurb">
                         I wrote this program while diving into the Microsoft Core Audio APIs. Since I have a background in music, I am very interested
@@ -291,7 +323,7 @@
                     </div>
                 </div>
                 <!-- Windows Console Snake Game -->
-                <div class="info info3">
+                <div class="info info4">
                     <h2>Windows Console Snake Game</h2>
                     <p class="blurb">
                         This game runs a text-based version of the classic Snake Game in a Windows console terminal.
@@ -305,7 +337,7 @@
                     </div>
                 </div>
                 <!-- Windows Console Classic RPG -->
-                <div class="info info4">
+                <div class="info info5">
                     <h2>Windows Console Classic RPG</h2>
                     <p class="blurb">
                         This project is the first game I've created. This game is completely text-based and
