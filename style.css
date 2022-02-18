@@ -750,7 +750,7 @@ body {
     display: grid;
     justify-items: center;
     align-content: center;
-    grid-gap: 70px;
+    grid-gap: 50px;
 }
 
 .links {
@@ -776,7 +776,7 @@ body {
 }
 
 .info p {
-    font-size: 1.3rem;
+    font-size: 1rem;
     line-height: 2rem;
     color: var(--fontColor);
 }
